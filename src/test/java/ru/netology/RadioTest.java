@@ -17,6 +17,8 @@ class RadioTest {
         assertEquals(expected, actual);
     }
 
+
+
     @Test
     void setIncreaseVolume() {
         Radio incVol = new Radio();
@@ -66,7 +68,7 @@ class RadioTest {
     @Test
     void setPreviousStation() {
         Radio station = new Radio();
-        station.setPreviousStation(0);
+        station.setPreviousStation(1);
 
         int expected = 0;
         int actual = station.getPreviousStation();

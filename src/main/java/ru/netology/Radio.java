@@ -99,20 +99,20 @@ public class Radio {
         return currentStation;
     }
 
-    //Переключаем на предыдущую станцию
-    public void setPreviousStation(int newStation) {
-        if (newStation > minStation && newStation <= maxStation) {
-            currentStation = newStation - 1;
-            return;
-        }
-        if (newStation > maxStation) {
-            newStation = maxStation;
-        }
-        if (newStation < minStation) {
-            newStation = minStation;
-        }
-        currentStation = newStation;
+//Переключаем на предыдущую станцию
+public void setPreviousStation(int newStation) {
+    if (newStation > minStation && newStation <= maxStation) {
+        currentStation = newStation - 1;
+        return;
     }
+    if (newStation > maxStation) {
+        newStation = maxStation;
+    }
+    if (newStation < minStation) {
+        newStation = minStation;
+    }
+    currentStation = newStation;
+}
 
     public int getPreviousStation() {
         return currentStation;
