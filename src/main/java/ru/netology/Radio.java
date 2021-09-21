@@ -25,43 +25,17 @@ public class Radio {
     }
 
     // Увеличение звука
-    public void setIncreaseVolume(int newVolume) {
-        if (newVolume < maxVol && newVolume >= minVol) {
-            currentVolume = newVolume + 1;
-            return;
+    public void increaseVolume() {
+        if (currentVolume < maxVol) {
+            currentVolume += 1;
         }
-        if (newVolume > maxVol) {
-            newVolume = maxVol;
-
-        }
-        if (newVolume < minVol) {
-            newVolume = minVol;
-        }
-        currentVolume = newVolume;
-    }
-
-    public int getIncreaseVolume() {
-        return currentVolume;
     }
 
     // Уменьшение звука
-    public void setDecreaseVolume(int newVolume) {
-        if (newVolume <= maxVol && newVolume > minVol) {
-            currentVolume = newVolume - 1;
-            return;
+    public void decreaseVolume() {
+        if (currentVolume > minVol) {
+            currentVolume -= 1;
         }
-        if (newVolume > maxVol) {
-            newVolume = maxVol;
-
-        }
-        if (newVolume < minVol) {
-            newVolume = minVol;
-        }
-        currentVolume = newVolume;
-    }
-
-    public int getDecreaseVolume() {
-        return currentVolume;
     }
 
     // Выставление границ станций
@@ -81,40 +55,16 @@ public class Radio {
     }
 
     //Переключаем на следующую станцию
-    public void setNextStation(int newStation) {
-        if (newStation >= minStation && newStation < maxStation) {
-            currentStation = newStation + 1;
-            return;
+    public void nextStation() {
+        if (currentStation < maxStation) {
+            currentStation = currentStation + 1;
         }
-        if (newStation > maxStation) {
-            newStation = maxStation;
-        }
-        if (newStation < minStation) {
-            newStation = minStation;
-        }
-        currentStation = newStation;
     }
 
-    public int getNextStation() {
-        return currentStation;
-    }
-
-//Переключаем на предыдущую станцию
-public void setPreviousStation(int newStation) {
-    if (newStation > minStation && newStation <= maxStation) {
-        currentStation = newStation - 1;
-        return;
-    }
-    if (newStation > maxStation) {
-        newStation = maxStation;
-    }
-    if (newStation < minStation) {
-        newStation = minStation;
-    }
-    currentStation = newStation;
-}
-
-    public int getPreviousStation() {
-        return currentStation;
+    //Переключаем на предыдущую станцию
+    public void previousStation() {
+        if (currentStation > minStation) {
+            currentStation = currentStation - 1;
+        }
     }
 }
