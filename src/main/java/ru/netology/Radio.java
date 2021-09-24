@@ -41,11 +41,11 @@ public class Radio {
     // Выставление границ станций
     public void setCurrentStation(int newStation) {
 
-        if (newStation > maxStation) {
-            newStation = maxStation;
-        }
         if (newStation < minStation) {
             newStation = minStation;
+        }
+        if (newStation > maxStation) {
+            newStation = maxStation;
         }
         currentStation = newStation;
     }
@@ -59,12 +59,18 @@ public class Radio {
         if (currentStation < maxStation) {
             currentStation = currentStation + 1;
         }
+        if (currentStation == maxStation){
+            currentStation=minStation;
+        }
     }
 
     //Переключаем на предыдущую станцию
     public void previousStation() {
         if (currentStation > minStation) {
             currentStation = currentStation - 1;
+        }
+        if (currentStation == minStation) {
+            currentStation = maxStation;
         }
     }
 }

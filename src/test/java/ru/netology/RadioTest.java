@@ -125,7 +125,7 @@ class RadioTest {
 
         station.nextStation();
 
-        int expected = 9;
+        int expected = 0;
         int actual = station.getCurrentStation();
 
         assertEquals(expected, actual);
@@ -151,7 +151,7 @@ class RadioTest {
 
         station.previousStation();
 
-        int expected = 0;
+        int expected = 9;
         int actual = station.getCurrentStation();
 
         assertEquals(expected, actual);
