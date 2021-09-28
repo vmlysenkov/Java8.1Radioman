@@ -108,11 +108,11 @@ class RadioTest {
     @Test
     void nextStation() {
         Radio station = new Radio();
-        station.setCurrentStation(5);
+        station.setCurrentStation(8);
 
         station.nextStation();
 
-        int expected = 6;
+        int expected = 9;
         int actual = station.getCurrentStation();
 
         assertEquals(expected, actual);

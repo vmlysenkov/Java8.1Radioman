@@ -7,6 +7,8 @@ public class Radio {
     private int minStation = 0;
     private int maxStation = 9;
     private int currentStation;
+    private int lowBoarderStation;
+    private int highBoarderStation;
 
     // Выставление границ звука
     public void setCurrentVolume(int newVolume) {
@@ -57,20 +59,22 @@ public class Radio {
     //Переключаем на следующую станцию
     public void nextStation() {
         if (currentStation < maxStation) {
-            currentStation = currentStation + 1;
+            highBoarderStation = currentStation + 1;
         }
-        if (currentStation == maxStation){
-            currentStation=minStation;
+        if (currentStation == maxStation) {
+            highBoarderStation = minStation;
         }
+        currentStation = highBoarderStation;
     }
 
     //Переключаем на предыдущую станцию
     public void previousStation() {
         if (currentStation > minStation) {
-            currentStation = currentStation - 1;
+            lowBoarderStation = currentStation - 1;
         }
         if (currentStation == minStation) {
-            currentStation = maxStation;
+            lowBoarderStation = maxStation;
         }
+        currentStation = lowBoarderStation;
     }
 }
