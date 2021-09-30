@@ -2,13 +2,15 @@ package ru.netology;
 
 public class Radio {
     private int minVol = 0;
-    private int maxVol = 10;
+    private int maxVol = 100;
     private int currentVolume;
+    private int stationAmount = 15;
     private int minStation = 0;
-    private int maxStation = 9;
+    private int maxStation = 14;
     private int currentStation;
     private int lowBoarderStation;
     private int highBoarderStation;
+
 
     // Выставление границ звука
     public void setCurrentVolume(int newVolume) {
@@ -76,5 +78,15 @@ public class Radio {
             lowBoarderStation = maxStation;
         }
         currentStation = lowBoarderStation;
+    }
+
+    //Создал конструктор с параметрами
+    public Radio(int stationAmount) {
+        this.stationAmount = stationAmount;
+        this.maxStation = stationAmount - 1;
+    }
+
+    //Пустой конструктор
+    public Radio() {
     }
 }

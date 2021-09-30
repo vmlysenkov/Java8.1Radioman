@@ -9,7 +9,7 @@ class RadioTest {
     @Test
     void setCurrentVolumeMore() {
         Radio rad = new Radio();
-        rad.setCurrentVolume(12);
+        rad.setCurrentVolume(99);
 
         int expected = 10;
         int actual = rad.getCurrentVolume();
@@ -32,11 +32,11 @@ class RadioTest {
     @Test
     void increaseVolume() {
         Radio incVol = new Radio();
-        incVol.setCurrentVolume(4);
+        incVol.setCurrentVolume(90);
 
         incVol.increaseVolume();
 
-        int expected = 5;
+        int expected = 91;
         int actual = incVol.getCurrentVolume();
 
         assertEquals(expected, actual);
@@ -45,11 +45,11 @@ class RadioTest {
     @Test
     void increaseVolumeMax() {
         Radio incVol = new Radio();
-        incVol.setCurrentVolume(10);
+        incVol.setCurrentVolume(101);
 
         incVol.increaseVolume();
 
-        int expected = 10;
+        int expected = 100;
         int actual = incVol.getCurrentVolume();
 
         assertEquals(expected, actual);
@@ -86,9 +86,9 @@ class RadioTest {
     @Test
     void setCurrentStationMore() {
         Radio station = new Radio();
-        station.setCurrentStation(10);
+        station.setCurrentStation(12);
 
-        int expected = 9;
+        int expected = 12;
         int actual = station.getCurrentStation();
 
         assertEquals(expected, actual);
@@ -107,12 +107,12 @@ class RadioTest {
 
     @Test
     void nextStation() {
-        Radio station = new Radio();
-        station.setCurrentStation(8);
+        Radio station = new Radio(12);
+        station.setCurrentStation(12);
 
         station.nextStation();
 
-        int expected = 9;
+        int expected = 12;
         int actual = station.getCurrentStation();
 
         assertEquals(expected, actual);
@@ -120,8 +120,8 @@ class RadioTest {
 
     @Test
     void nextStationMax() {
-        Radio station = new Radio();
-        station.setCurrentStation(9);
+        Radio station = new Radio(25);
+        station.setCurrentStation(24);
 
         station.nextStation();
 
@@ -134,11 +134,11 @@ class RadioTest {
     @Test
     void setPreviousStation() {
         Radio station = new Radio();
-        station.setCurrentStation(5);
+        station.setCurrentStation(9);
 
         station.previousStation();
 
-        int expected = 4;
+        int expected = 8;
         int actual = station.getCurrentStation();
 
         assertEquals(expected, actual);
@@ -156,4 +156,12 @@ class RadioTest {
 
         assertEquals(expected, actual);
     }
+
+    @Test
+    public void shouldUseRadio() {
+        Radio radio = new Radio();
+        Radio radio1 = new Radio();
+    }
+
+
 }
